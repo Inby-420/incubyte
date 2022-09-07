@@ -12,6 +12,7 @@ class StringCalculator {
     int add(string numbers) {
         for (int i=0; numbers[i] != '\0'; i++) {
             if (numbers[i] >=48 && numbers[i]<=57) number += numbers[i]-48;
+            if (numbers[i] >=97 && numbers[i] <=122) number += numbers[i]-96;
         }
         return number;
     }
