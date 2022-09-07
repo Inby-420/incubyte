@@ -15,9 +15,19 @@ class StringCalculator {
         vector<int> negatives;
         int tens = 1;
         
-        bool flag = false;    
-        for (int i=0; numbers[i] != '\0'; i++) {
-            if (numbers[i] == ',' or numbers[i] == '\n') {
+        bool flag = false, changee = false;
+        char delimiter = ',';
+        if (numbers.length()>=4) {
+            if (numbers[0] =='/' and numbers[1] == '/' and numbers[3] == '\n') {
+                delimiter = numbers[2];
+                changee = true;
+            }
+        }
+        int start;
+        if (changee) start = 4;
+        else start = 0;
+        for (int i=start; numbers[i] != '\0'; i++) {
+            if (numbers[i] == delimiter or numbers[i] == '\n') {
                 
                 int t1=0;
                 for (int k=temp.size()-1; k>=0; k--) {
