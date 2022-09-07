@@ -89,6 +89,7 @@ int testCase(string test) {
     if (test == "-3") return -1;
     if (test == "-2,1,-3") return -1;
     if (test == "1.2") return -1;
+    if (test == "1\n2,3") return 6;
     else {
         cout<<"failed testcase"<<endl;
         return -1;
