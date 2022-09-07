@@ -12,7 +12,9 @@ class StringCalculator {
     }
     int add(string numbers) {
         vector<int> temp;
+        int x = -1;
         int tens = 1;
+        try {
         for (int i=0; numbers[i] != '\0'; i++) {
             if (numbers[i] == ',') {
                 int t1=0;
@@ -29,7 +31,15 @@ class StringCalculator {
                 temp.push_back(numbers[i]-48);
                 
             else if (numbers[i] >=97 && numbers[i] <=122) temp.push_back(numbers[i]-96);
+            if (numbers[i] == '-') throw x;
             
+        }
+        
+        
+        }
+        catch (int x) {
+            cout<<"Exception caught, -ve numbers not allowed"<<endl;
+            return -1;
             
         }
         int t2 = 0;
@@ -40,6 +50,7 @@ class StringCalculator {
         if (t2 <=1000) number += t2;
         return number;
     }
+    
 
 };
 
