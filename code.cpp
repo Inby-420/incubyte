@@ -34,7 +34,11 @@ class StringCalculator {
                 temp.push_back(numbers[i]-48);
                 
             else if (numbers[i] >=97 && numbers[i] <=122) temp.push_back(numbers[i]-96);
-            if (numbers[i] == '-') flag = true;
+            else if (numbers[i] == '-') flag = true;
+            else {
+                cout<<"wrong testcase"<<endl;
+                return -1;
+            }
             
         }
         //if (negatives.size() >0) throw x;
