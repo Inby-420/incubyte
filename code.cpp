@@ -10,7 +10,9 @@ class StringCalculator {
         number = 0;
     }
     int add(string numbers) {
-        number = numbers[0] - 48;
+        for (int i=0; numbers[i] != '\0'; i++) {
+            if (numbers[i] >=48 && numbers[i]<=57) number += numbers[i]-48;
+        }
         return number;
     }
 
@@ -24,6 +26,7 @@ int testCase(string test) {
     if (test == ",") return 0;
     if (test == "1") return 1;
     if (test == "2") return 2;
+    if (test == ".2") return 2;
     else {
         cout<<"failed testcase"<<endl;
         return -1;
