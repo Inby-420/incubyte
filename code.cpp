@@ -17,7 +17,7 @@ class StringCalculator {
         
         bool flag = false;    
         for (int i=0; numbers[i] != '\0'; i++) {
-            if (numbers[i] == ',') {
+            if (numbers[i] == ',' or numbers[i] == '\n') {
                 
                 int t1=0;
                 for (int k=temp.size()-1; k>=0; k--) {
@@ -110,7 +110,7 @@ void result(int n1, int number) {
 int main() {
     
     StringCalculator obj;
-    string test = "1.2";
+    string test = "1\n2,3";
     int number = obj.add(test);
     int n1 = testCase(test);
     result(n1,number);
