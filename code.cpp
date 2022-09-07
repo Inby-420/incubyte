@@ -21,7 +21,7 @@ int testCase(string test) {
     if (test == "") return 0;
     if (test == ".") return 0;
     if (test == ",") return 0;
-    
+    if (test == "1") return 1;
     else {
         cout<<"failed testcase"<<endl;
         return -1;
