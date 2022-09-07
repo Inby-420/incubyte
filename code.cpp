@@ -15,17 +15,36 @@ class StringCalculator {
 
 };
 
-void testCase() {
-    StringCalculator obj;
+int testCase(string test) {
     
-    string test = "";
-    //test 
-    int number = obj.add("");
-    if (number == -1) cout<<"runtime error";
-    else if (number == 0) cout<<"accepted!";
+    
+    if (test == "") return 0;
+    if (test == ".") return 0;
+    if (test == ",") return 0;
+    
+    else {
+        cout<<"failed testcase"<<endl;
+        return -1;
+    }
+    
+}
+
+void result(int n1, int number) {
+    if (number == -1) {
+        cout<<"runtime error";
+        return;
+    }
+        
+    if (n1 == number) cout<<"accepted!";
+    else cout<<"rejected!";
+    cout<<endl;
 }
 int main() {
-    testCase();
-
+    
+    StringCalculator obj;
+    string test = "1";
+    int number = obj.add(test);
+    int n1 = testCase(test);
+    result(n1,number);
     return 0;
 }
