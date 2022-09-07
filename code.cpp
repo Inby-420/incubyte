@@ -2,7 +2,11 @@
 #include<string>
 #include<vector>
 using namespace std;
+  
+// -1 signifies wrong testcase  
+// this code solves first 8/9 parts of the problem statement
 
+  
 class StringCalculator {
     int number;
     
@@ -19,7 +23,12 @@ class StringCalculator {
         char delimiter = ',';
         if (numbers.length()>=4) {
             if (numbers[0] =='/' and numbers[1] == '/' and numbers[3] == '\n') {
+                
                 delimiter = numbers[2];
+                if (delimiter >=48 and delimiter<=57 or delimiter>=97 and delimiter<=122 or delimiter >=65 and delimiter<=90) {
+                    cout<<"numbers and letters are not allowed"<<endl;
+                    return -1;
+                }
                 changee = true;
             }
         }
@@ -27,7 +36,7 @@ class StringCalculator {
         if (changee) start = 4;
         else start = 0;
         for (int i=start; numbers[i] != '\0'; i++) {
-            if (numbers[i] == delimiter or numbers[i] == '\n') {
+            if (numbers[i] == delimiter or numbers[i] == '\n' and numbers[i-1] != ',') {
                 
                 int t1=0;
                 for (int k=temp.size()-1; k>=0; k--) {
@@ -51,8 +60,7 @@ class StringCalculator {
             }
             
         }
-        //if (negatives.size() >0) throw x;
-        
+            
         int t2 = 0;
         for (int k=temp.size()-1; k>=0; k--) {
                     t2 += temp[k]*tens;
@@ -70,7 +78,7 @@ class StringCalculator {
         catch (int x) {
             cout<<"Exception caught, -ve numbers not allowed"<<endl;
             cout<<"list of negatives: ";
-            for (auto num: negatives) cout<<num<<" ";
+            for (auto num: negatives) cout<<"-"<<num<<" ";
             cout<<endl;
             return -1;
             
