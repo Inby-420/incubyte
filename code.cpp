@@ -69,6 +69,7 @@ int testCase(string test) {
     if (test == "1,10,100,1001") return 111;  
     if (test == "1,1002,100,2") return 103;
     if (test == "-2") return -1; // signifies wrong testcase
+    if (test == "-2,1,-3") return -1;
     else {
         cout<<"failed testcase"<<endl;
         return -1;
@@ -89,7 +90,7 @@ void result(int n1, int number) {
 int main() {
     
     StringCalculator obj;
-    string test = "-2";
+    string test = "-2,1,-3";
     int number = obj.add(test);
     int n1 = testCase(test);
     result(n1,number);
