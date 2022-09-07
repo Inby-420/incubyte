@@ -21,7 +21,8 @@ class StringCalculator {
                     tens = tens*10;
                 }
                 temp.clear();
-                number += t1;
+                
+                if (t1 <=1000) number += t1;
                 tens = 1;
             }
             else if (numbers[i] >=48 && numbers[i]<=57)
@@ -36,7 +37,7 @@ class StringCalculator {
                     t2 += temp[k]*tens;
                     tens = tens*10;
         }
-        number += t2;
+        if (t2 <=1000) number += t2;
         return number;
     }
 
@@ -55,6 +56,8 @@ int testCase(string test) {
     if (test == "1,2,a,c") return 7;
     if (test == "1,10,100") return 111;
     if (test == "1,10,100,1001") return 111;  
+    if (test == "1,1002,100,2") return 103;
+    if (test == "-2") return -1; // signifies wrong testcase
     else {
         cout<<"failed testcase"<<endl;
         return -1;
@@ -75,7 +78,7 @@ void result(int n1, int number) {
 int main() {
     
     StringCalculator obj;
-    string test = "1,10,100,1001";
+    string test = "-2";
     int number = obj.add(test);
     int n1 = testCase(test);
     result(n1,number);
