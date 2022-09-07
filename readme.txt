@@ -1,4 +1,4 @@
-// Incubyte hiring challange
+// Incubyte hiring challenge
 // TDD in C++
 
 Problem Statement: 1. In a test-first manner, create a simple class named StringCalculator and a method
