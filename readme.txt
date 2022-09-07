@@ -53,5 +53,13 @@ Output: 6
 Note: Existing test cases should still pass.
 
 
-// created by: Hastak Patel
+Solution Format:
+(1). The first file code.cpp contains 8/9 problem statements provided with all the required test cases.
+(2). The next file is a combined solution of all 9 problem statements with some modifications on test case rules which are stated as follows
+	for odd and even functionality, 0// is odd and 1// is even respectively
+	note: in this program odd and even will be decided post changes in delimiter if any
+Please Consider the first file in case moficiations violates the protocol of evaluation.
+
+// Solved by: Hastak Patel
 // Pune Institute of Computer Technology
+// email: hastakpatel19@gmail.com
